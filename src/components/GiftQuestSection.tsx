@@ -104,7 +104,12 @@ export default function GiftQuestSection({ onBack, onFinish }: { onBack: () => v
     };
 
     return (
-        <section className="min-h-screen w-full bg-[#fce4ec] flex flex-col items-center justify-center p-6 font-sans text-[#c2547a] relative z-50 overflow-hidden">
+        <motion.section
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="min-h-screen w-full bg-[#fce4ec] flex flex-col items-center justify-center p-6 font-sans text-[#c2547a] relative z-50 overflow-hidden"
+        >
             <button onClick={onBack} className="absolute top-6 left-6 z-[60] text-[10px] uppercase tracking-widest text-[#c2547a]/40 hover:text-[#c2547a] p-2">
                 ← Back
             </button>
@@ -161,7 +166,12 @@ export default function GiftQuestSection({ onBack, onFinish }: { onBack: () => v
                     </AnimatePresence>
                 </div>
             ) : (
-                <div className="flex flex-col items-center z-50 w-full max-w-sm px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col items-center z-50 w-full max-w-sm px-4"
+                >
                     <h2 className="text-4xl font-black italic uppercase mb-8 text-[#c2547a]">Lucky Wheel</h2>
 
                     <div className="relative w-72 h-72 md:w-80 md:h-80">
@@ -249,7 +259,7 @@ export default function GiftQuestSection({ onBack, onFinish }: { onBack: () => v
                     >
                         {isSpinning ? '🍀 Good Luck...' : '✨ Spin Now!'}
                     </motion.button>
-                </div>
+                </motion.div>
             )}
 
             {/* Result Modal */}
@@ -289,6 +299,6 @@ export default function GiftQuestSection({ onBack, onFinish }: { onBack: () => v
                 </motion.div>
               )}
             </AnimatePresence>
-        </section>
+        </motion.section>
     );
 }

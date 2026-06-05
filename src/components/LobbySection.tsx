@@ -9,7 +9,7 @@ export default function LobbySection({ onEnter }: { onEnter: () => void }) {
     setIsClicked(true);
     setTimeout(() => {
       onEnter();
-    }, 800);
+    }, 1800);
   };
 
   return (
@@ -19,7 +19,7 @@ export default function LobbySection({ onEnter }: { onEnter: () => void }) {
       <motion.div 
         initial={{ rotate: -2, y: 20, opacity: 0 }}
         animate={{ rotate: 1, y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative bg-[#fff8fb] w-full max-w-[420px] h-[620px] flex flex-col items-center justify-center overflow-hidden border-r-[2px] border-[#f4a7be]/20"
         style={{
           clipPath: 'polygon(0% 0%, 100% 0%, 100% 92%, 98% 93%, 95% 91%, 92% 94%, 88% 92%, 85% 95%, 80% 92%, 77% 94%, 73% 91%, 70% 93%, 66% 90%, 62% 94%, 58% 92%, 55% 95%, 50% 92%, 47% 94%, 43% 91%, 40% 93%, 36% 90%, 32% 94%, 28% 92%, 25% 95%, 20% 92%, 17% 94%, 13% 91%, 10% 93%, 6% 90%, 2% 94%, 0% 92%)',
@@ -114,8 +114,8 @@ export default function LobbySection({ onEnter }: { onEnter: () => void }) {
             <motion.div 
               key="effect"
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: [1, 3], opacity: [1, 0] }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              animate={{ scale: [1, 4], opacity: [1, 0] }}
+              transition={{ duration: 1.6, ease: "easeOut" }}
               className="z-50"
             >
               <img 

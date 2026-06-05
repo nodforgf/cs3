@@ -15,7 +15,7 @@ export default function AnniversaryPage({ onFinish }: AnniversarySectionProps) {
     setTimeout(() => {
       onFinish(); 
       setIsExploding(false);
-    }, 1100);
+    }, 2200);
   };
 
   return (
@@ -46,8 +46,8 @@ export default function AnniversaryPage({ onFinish }: AnniversarySectionProps) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ 
-            delay: 0.3,
-            duration: 3,
+            delay: 0.4,
+            duration: 1.4,
             ease: [0.22, 1, 0.36, 1]
           }}
           className="w-full flex flex-col items-center z-10"
@@ -108,7 +108,7 @@ export default function AnniversaryPage({ onFinish }: AnniversarySectionProps) {
             <motion.div 
               initial={{ scale: 0, opacity: 1 }}
               animate={{ scale: 80, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeIn" }}
+              transition={{ duration: 2.0, ease: "easeIn" }}
               className="text-[#e8789a]"
             >
               <svg viewBox="0 0 512 512" className="w-16 h-16 fill-current">

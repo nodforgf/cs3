@@ -22,7 +22,7 @@ export default function MusicCassetteSection() {
         initial={{ rotate: -4, scale: 0.88, opacity: 0 }}
         animate={{ rotate: 2, scale: 1, opacity: 1 }}
         whileHover={{ rotate: 0, scale: 1.04 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 w-full max-w-xs"
         style={{ filter: 'drop-shadow(0 18px 40px rgba(194,84,122,0.28))' }}
       >
@@ -163,7 +163,7 @@ export default function MusicCassetteSection() {
         rel="noopener noreferrer"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.8, duration: 1.0 }}
         whileHover={{ scale: 1.08, backgroundColor: '#c2547a' }}
         whileTap={{ scale: 0.94 }}
         className="mt-10 z-10 bg-[#e8789a] text-white px-12 py-4 rounded-full font-black uppercase tracking-[0.3em] shadow-[0_8px_30px_rgba(232,120,154,0.45)] flex items-center gap-3 text-sm transition-colors"

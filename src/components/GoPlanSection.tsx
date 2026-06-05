@@ -32,12 +32,17 @@ const SCROLL_POSITIONS = [
 
 export default function GoPlanSection({ onUnlock }: { onUnlock: () => void }) {
   const [openWish, setOpenWish] = useState<typeof WISHES[0] | null>(null);
-  // track ว่าหยิบอ่านไปแล้วกี่ใบ (เพื่อแสดง badge)
   const [read, setRead] = useState<Set<number>>(new Set());
+  const [bursting, setBursting] = useState(false);
 
   const handlePick = (wish: typeof WISHES[0]) => {
     setOpenWish(wish);
     setRead(prev => new Set([...prev, wish.id]));
+  };
+
+  const handleUnlock = () => {
+    setBursting(true);
+    setTimeout(() => onUnlock(), 1600);
   };
 
   return (
@@ -244,7 +249,7 @@ export default function GoPlanSection({ onUnlock }: { onUnlock: () => void }) {
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={onUnlock}
+          onClick={handleUnlock}
           className="relative cursor-pointer"
         >
           <motion.div
@@ -273,6 +278,28 @@ export default function GoPlanSection({ onUnlock }: { onUnlock: () => void }) {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* ===== overlay หัวใจขยายตอนเปลี่ยนหน้า ===== */}
+      <AnimatePresence>
+        {bursting && (
+          <motion.div
+            className="fixed inset-0 z-[500] flex items-center justify-center pointer-events-none"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ scale: 0, opacity: 1 }}
+              animate={{ scale: 80, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeIn" }}
+              className="text-[#e8789a]"
+            >
+              <svg viewBox="0 0 512 512" className="w-16 h-16 fill-current">
+                <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
+              </svg>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </section>
   );
