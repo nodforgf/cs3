@@ -119,7 +119,6 @@ export default function LetterSection({ onNext }: { onNext: () => void }) {
                                         <p>เย้ๆครบรอบอีกแล้ว ก็ยังต้องบอกว่าขอบคุณมากๆที่เข้ามานะ ขอบคุณครอบครัวแกด้วยที่น่ารักกับชั้นมากๆ ยังมีอีกหลายเรื่องราวรอเราอยู่ข้างหน้า และชั้นก็ดีใจที่คนที่ได้เดินไปด้วยกันคือแก  รักแกจุ๊บๆๆๆๆๆ 💗💗💗</p>
                                     </div>
                                     <div className="text-right font-black italic text-sm pt-2 border-t border-[#e8789a]/10">
-                                        — รักเสมอ
                                     </div>
                                 </div>
                             </div>
