@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
 const CARD_IMAGES = [
-    "/images/couple1.jpeg",
-    "/images/couple2.jpeg",
-    "/images/couple3.jpeg",
-    "/images/couple4.jpeg",
-    "/images/couple5.jpeg",
-    "/images/couple6.jpeg",
+    "/images/couple7.jpeg",
+    "/images/couple8.jpeg",
+    "/images/couple9.jpeg",
+    "/images/couple10.jpeg",
+    "/images/couple11.jpeg",
+    "/images/couple12.jpeg",
 ];
 
 export default function GiftQuestSection({ onBack, onFinish }: { onBack: () => void, onFinish: () => void }) {
