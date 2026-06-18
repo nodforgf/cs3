@@ -85,7 +85,7 @@ function PhotoCard({ photoUrl, idx, style, photoDate }: PhotoCardProps) {
         >
           <span className="text-[#e8789a] mb-1 text-base flex-shrink-0">♥</span>
           <div className="overflow-y-auto flex-1 w-full flex items-center justify-center">
-            <p className="text-[#c2547a] text-[10px] font-bold text-center leading-loose italic break-words">
+            <p className={`text-[#c2547a] text-[9px] font-bold text-center italic break-words px-1 ${(idx % messages.length === 2 || idx % messages.length === 3) ? 'leading-normal' : 'leading-relaxed'}`}>
               "{messages[idx % messages.length]}"
             </p>
           </div>
